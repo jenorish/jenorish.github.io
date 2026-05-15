@@ -1,0 +1,186 @@
+/* =========================
+FILE: style.css
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(180deg,#020617,#0f172a,#111827);
+  color:#fff;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  background:#020617;
+  padding:15px;
+  border-bottom:1px solid #334155;
+  z-index:1000;
+}
+
+.top-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.top-links a{
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  background:radial-gradient(circle at top,#2563eb,#0f172a);
+}
+
+.hero h1{
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.hero h2{
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:900px;
+  margin:auto;
+  margin-bottom:30px;
+  font-size:1.2rem;
+}
+
+.hero-buttons a{
+  display:inline-block;
+  padding:14px 24px;
+  background:#38bdf8;
+  color:#000;
+  border-radius:12px;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.section{
+  padding:80px 10%;
+}
+
+.section h2{
+  font-size:2.5rem;
+  margin-bottom:30px;
+  color:#38bdf8;
+}
+
+.skills-grid,
+.awards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card,
+.award-card,
+.contact-box,
+.slide,
+.cert-card,
+.recommendation-card{
+  background:rgba(255,255,255,0.08);
+  padding:24px;
+  border-radius:16px;
+  backdrop-filter:blur(10px);
+  transition:.3s;
+}
+
+.card:hover,
+.slide:hover,
+.cert-card:hover,
+.recommendation-card:hover{
+  transform:translateY(-8px);
+}
+
+.carousel,
+.cert-slider,
+.recommendation-slider{
+  overflow:hidden;
+}
+
+.carousel-track,
+.cert-track,
+.recommendation-track{
+  display:flex;
+  gap:20px;
+  animation:scroll 35s linear infinite;
+}
+
+.slide,
+.cert-card,
+.recommendation-card{
+  min-width:320px;
+}
+
+.timeline{
+  border-left:4px solid #38bdf8;
+  padding-left:30px;
+}
+
+.timeline-item{
+  margin-bottom:40px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.timeline-item.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#020617;
+  font-weight:bold;
+}
+
+@keyframes scroll{
+  0%{
+    transform:translateX(0);
+  }
+
+  100%{
+    transform:translateX(-50%);
+  }
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:2.5rem;
+  }
+
+  .section{
+    padding:60px 6%;
+  }
+
+  .slide,
+  .cert-card,
+  .recommendation-card{
+    min-width:280px;
+  }
+
+}
